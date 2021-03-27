@@ -230,7 +230,6 @@ function App() {
               max="15"
               value={movAvg}
               onChange={handleSliderChange}
-              cssClass="slider"
             />
           </Card>
         </Flex>
