@@ -2511,6 +2511,11 @@ array-includes@^3.1.1, array-includes@^3.1.2:
     get-intrinsic "^1.1.1"
     is-string "^1.0.5"
 
+array-smooth@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/array-smooth/-/array-smooth-1.0.0.tgz#d43be29f2b2d80fa67202b2861753f6da9db7465"
+  integrity sha1-1DvinystgPpnICsoYXU/banbdGU=
+
 array-union@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
@@ -10277,6 +10282,11 @@ slice-ansi@^4.0.0:
     ansi-styles "^4.0.0"
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
+
+smoothish@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/smoothish/-/smoothish-1.0.0.tgz#9d3ba98b7a448e4d41251c601e9b2e3ce5e44208"
+  integrity sha512-sriZQg8aOwQtxe1HjiACDxy4yArtbooZkPMHu4lp7sy+/s9G1EdoWpbneGfJwTkMrElvpsyn9uXJbah9WDmbbQ==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

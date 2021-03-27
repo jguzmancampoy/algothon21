@@ -21,7 +21,7 @@ import {
   LineSeries,
 } from "react-vis";
 import jstat from "jstat";
-import { ma } from "moving-averages";
+import smoothish from "smoothish";
 const parserOptions = {
   header: true,
   dynamicTyping: true,
@@ -65,6 +65,14 @@ function calcStat(inputData) {
   };
 }
 
+function calcMovAvg(inputData, movAvg) {
+  const rawArray = inputData.map((x) => x["y"]);
+  const smoothArray = smoothish(rawArray, { radius: movAvg });
+  return smoothArray.map((currElement, index) => {
+    return { y: currElement, x: index }; //equivalent to list[index]
+  });
+}
+
 function App() {
   const [referenceData, setReferenceData] = useState([]);
   const [exploratoryData, setExploratoryData] = useState([]);
@@ -93,12 +101,11 @@ function App() {
         error += Math.pow(x - y, 2);
       }
       const mse = parseFloat(error / a.length).toFixed(3);
-      console.log(("errrr:", mse));
       setMSE(mse);
     }
   }, [exploratoryData]);
   useEffect(() => {
-    setExploratoryData(ma(originalExploratoryData, movAvg));
+    setExploratoryData(calcMovAvg(originalExploratoryData, movAvg));
   }, [movAvg]);
 
   const [exploreStats, calculateExploreStats] = useState([]);
