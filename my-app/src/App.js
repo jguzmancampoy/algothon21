@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import "../node_modules/react-vis/dist/style.css";
 import CSVReader from "react-csv-reader";
 import {
-  Button,
   PageWithHeader,
   Box,
   Card,
@@ -93,7 +91,7 @@ function App() {
     const a = referenceData.map((x) => x["y"]);
     const b = exploratoryData.map((x) => x["y"]);
     const minLength = Math.min(a.length, b.length);
-    if (a.length == b.length) {
+    if (a.length === b.length) {
       let error = 0;
       for (let i = 0; i < minLength; i++) {
         const x = isNaN(a[i]) ? 0 : a[i];
@@ -108,7 +106,6 @@ function App() {
     setExploratoryData(calcMovAvg(originalExploratoryData, movAvg));
   }, [movAvg]);
 
-  const [exploreStats, calculateExploreStats] = useState([]);
   const { height, width } = useWindowDimensions();
   const handleReferenceUpload = (data, fileInfo) => {
     const first_object_name = Object.keys(data[0])[0];
@@ -233,7 +230,7 @@ function App() {
               max="15"
               value={movAvg}
               onChange={handleSliderChange}
-              class="slider"
+              cssClass="slider"
             />
           </Card>
         </Flex>
